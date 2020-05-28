@@ -1,0 +1,36 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: cloud-stream-provider
+
+  cloud:
+    stream:
+      binders:                          # 在此处配置需要绑定的rabbitmq的服务信息
+        defaultRabbit:                  # 表示定义的名称，用于binding整合
+          type: rabbit                  # 消息组件类型
+          environment:                  # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: 39.97.226.47
+                port: 5672
+                username: guest
+                password: guest
+      bindings:                             # 服务的整合处理
+        output:                             # 这个名字是通道的名称
+          destination: fionExchange         # 表示要使用的exchange名称定义
+          content-type: application/json    # 设置消息类型，本次为json，文本可设置为"text/plain"
+          binder: defaultRabbit             # 设置要绑定的消息服务的具体设置
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 2        # eureka客户端向服务器发送心跳的时间间隔，单位为秒，默认30
+    lease-expiration-duration-in-seconds: 5     # eureka客户端向服务器最后一次发送心跳等待时间上限，默认90秒，超时将删除服务
+    instance-id: stream8801.com                   # 服务主机名称
+    prefer-ip-address: true                     # 访问路径可以显示ip地址

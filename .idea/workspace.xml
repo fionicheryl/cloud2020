@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40ac1fb3-3c8a-470b-9c86-50988ff43844" name="Default Changelist" comment="" />
+    <list default="true" id="40ac1fb3-3c8a-470b-9c86-50988ff43844" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +21,9 @@
         <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -38,6 +43,7 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="ProjectId" id="1bqxiiB02pyqoGfT1JSPEL3nRRG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="MyBatisLogPluginparameters" value="Parameters:" />
@@ -207,12 +213,26 @@
       <workItem from="1590502091644" duration="473000" />
       <workItem from="1590542082324" duration="21489000" />
       <workItem from="1590629293520" duration="1815000" />
-      <workItem from="1590648469909" duration="8530000" />
+      <workItem from="1590648469909" duration="9110000" />
+      <workItem from="1590715496027" duration="2724000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

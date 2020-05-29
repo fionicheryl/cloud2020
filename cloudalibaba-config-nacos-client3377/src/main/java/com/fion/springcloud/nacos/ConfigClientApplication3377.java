@@ -57,31 +57,32 @@ public class ConfigClientApplication3377 {
             return new FirstPageChartVo();
         }
         // 构造 time->pick 的映射
-        Map<String, String> time2PickMap = firstPageVos.stream().collect(Collectors.toMap(FirstPageVo::getTimeDitance, FirstPageVo::getPickUpNumber));
+        Map<String, Integer> time2PickMap = firstPageVos.stream().collect(Collectors.toMap(FirstPageVo::getTimeDitance, v -> Integer.parseInt(v.getPickUpNumber())));
         // 构造 time->give 的映射
-        Map<String, String> time2GiveMap = firstPageVos.stream().collect(Collectors.toMap(FirstPageVo::getTimeDitance, FirstPageVo::getGiveUpNumber));
+        Map<String, Integer> time2GiveMap = firstPageVos.stream().collect(Collectors.toMap(FirstPageVo::getTimeDitance, v -> Integer.parseInt(v.getGiveUpNumber())));
 
         // 定义返回数据图表
         FirstPageChartVo chartVo = new FirstPageChartVo();
         // 获取所有时间段，枚举中已经定义好时间段
         List<String> timeDistances = generateTimeDistances();
-        List<String> pickUpNumbers = new ArrayList<>();
-        List<String> giveUpNumbers = new ArrayList<>();
-        List<String> rates = new ArrayList<>();
+        List<Integer> pickUpNumbers = new ArrayList<>();
+        List<Integer> giveUpNumbers = new ArrayList<>();
+        List<Double> rates = new ArrayList<>();
         // 遍历时间段
         timeDistances.stream().forEach(v -> {
             if (time2PickMap.keySet().contains(v)) {
                 // 结果包含该时间段，用结果返回的自身的值
-                String pick = time2PickMap.get(v);
-                String give = time2GiveMap.get(v);
+                int pick = time2PickMap.get(v);
+                int give = time2GiveMap.get(v);
                 pickUpNumbers.add(pick);
                 giveUpNumbers.add(give);
-                rates.add(String.valueOf(Double.parseDouble(pick) / (Double.parseDouble(pick) + Double.parseDouble(give))));
+                double rate = pick / (pick + give);
+                rates.add(Double.parseDouble(String.format("%.4f", rate)));
             } else {
                 // 结果不包含，使用默认值0
-                pickUpNumbers.add("0");
-                giveUpNumbers.add("0");
-                rates.add("0");
+                pickUpNumbers.add(0);
+                giveUpNumbers.add(0);
+                rates.add(0D);
             }
         });
 
@@ -119,9 +120,9 @@ class FirstPageVo {
 @Data
 class FirstPageChartVo {
     List<String> timeDistances;
-    List<String> pickUpNumbers;
-    List<String> giveUpNumbers;
-    List<String> rates;
+    List<Integer> pickUpNumbers;
+    List<Integer> giveUpNumbers;
+    List<Double> rates;
 }
 
 

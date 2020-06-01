@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ac1fb3-3c8a-470b-9c86-50988ff43844" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/java/com/fion/springcloud/sentinel/SentinelApplication8401.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/java/com/fion/springcloud/sentinel/controller/FlowLimitController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,6 +60,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -146,15 +152,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderApplication83" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="cloudalibaba-consumer-nacos-order83" />
+    <configuration name="SentinelApplication8401" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloudalibaba-sentinel-service8401" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fion.springcloud.nacos.order.*" />
+          <option name="PATTERN" value="com.fion.springcloud.sentinel.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fion.springcloud.nacos.order.OrderApplication83" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fion.springcloud.sentinel.SentinelApplication8401" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,10 +168,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ConfigClientApplication3377" />
+        <item itemvalue="Spring Boot.SentinelApplication8401" />
         <item itemvalue="Spring Boot.ConfigClientApplication3377" />
         <item itemvalue="Spring Boot.ConfigClientApplication3399-TestGroup-INFO" />
         <item itemvalue="Spring Boot.ConfigClientApplication3388CopyFrom3377-TEST" />
-        <item itemvalue="Spring Boot.OrderApplication83" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +180,17 @@
       <serviceView>
         <option name="contentProportion" value="0.391563" />
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@acf2cbc2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@acf2cbc2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2c054d01" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -214,7 +230,8 @@
       <workItem from="1590542082324" duration="21489000" />
       <workItem from="1590629293520" duration="1815000" />
       <workItem from="1590648469909" duration="9110000" />
-      <workItem from="1590715496027" duration="2724000" />
+      <workItem from="1590715496027" duration="14905000" />
+      <workItem from="1590993258262" duration="1227000" />
     </task>
     <servers />
   </component>
@@ -233,16 +250,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

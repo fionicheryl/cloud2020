@@ -1,30 +1,37 @@
 package com.fion.springcloud.nacos;
 
-import com.alibaba.fastjson.JSON;
+import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.date.BetweenFormater.Level;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
+import com.google.common.collect.Lists;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import lombok.NoArgsConstructor;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@SpringBootApplication
+/*@SpringBootApplication
 @EnableDiscoveryClient
-@Slf4j
+@Slf4j*/
 public class ConfigClientApplication3377 {
 
     private ViewLoginInfoService viewLoginInfoService;
 
-    public static void main(String[] args) {
+    private CharNewMapper charNewMapper = new CharNewMapper();
+
+    private ChatNewService chatNewService = new ChatNewService();
+
+    /*public static void main(String[] args) {
         SpringApplication.run(ConfigClientApplication3377.class, args);
-    }
+    }*/
 
     /*public static void main(String[] args) {
         String currentDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
@@ -35,6 +42,75 @@ public class ConfigClientApplication3377 {
         Map<String, FirstPageChartVo> vo = configClientApplication3377.getOnlineDate();
         System.out.println(JSON.toJSONString(vo));*//*
     }*/
+
+    public static void main(String[] args) {
+        /*Paging charNewVos = new ConfigClientApplication3377().getWebchatChannelList(null);
+        System.out.println(charNewVos);*/
+        /*int size = 10;
+        int total = 98;
+        int current = 9;
+
+        if (total / size + (total % size != 0 ? 1 : 0) == current) {
+            System.out.println("last page");
+        } else {
+            System.out.println("not last page");
+        }
+        */
+        List<LoginMessage> loginMessages = Lists.newArrayList();
+
+        Map<String, String> loginMessageMap = loginMessages.stream()
+                .filter(v -> null != v && StrUtil.isNotEmpty(v.getTypename()))
+                .collect(Collectors.toMap(LoginMessage::getTypename, v -> formatTimeDiff(Long.parseLong(v.getAccounttime()))));
+
+
+        System.out.println(formatTimeDiff(3683L ));
+    }
+
+    /**
+     * 格式化时间戳
+     * @param seconds
+     * @return
+     */
+    private static String formatTimeDiff(Long seconds) {
+        StringBuilder timeDiff = new StringBuilder();
+        // 获得hutool的时间差，精确到秒，格式: a天b小时c分d秒，由于是当天数据，所以最大时间差不会超过天，所以格式为：b小时c分d秒
+        String hutoolTimeDiff = DateUtil.formatBetween(seconds * 1000, Level.SECOND);
+
+        if (hutoolTimeDiff.contains(Level.HOUR.getName())) {
+            // 截取小时
+            String hour = hutoolTimeDiff.substring(0, hutoolTimeDiff.indexOf(Level.HOUR.getName()));
+            // 截取分秒
+            hutoolTimeDiff = hutoolTimeDiff.substring(hutoolTimeDiff.indexOf(Level.HOUR.getName()) + Level.HOUR.getName().length());
+            // 格式化添加小时
+            timeDiff.append(String.format("%02d", Long.parseLong(hour)));
+        } else {
+            timeDiff.append("00");
+        }
+        timeDiff.append(":");
+
+        if (hutoolTimeDiff.contains(Level.MINUTE.getName())) {
+            // 截取分
+            String minute = hutoolTimeDiff.substring(0, hutoolTimeDiff.indexOf(Level.MINUTE.getName()));
+            // 截取秒
+            hutoolTimeDiff = hutoolTimeDiff.substring(hutoolTimeDiff.indexOf(Level.MINUTE.getName()) + Level.MINUTE.getName().length());
+            // 格式化添加分
+            timeDiff.append(String.format("%02d", Long.parseLong(minute)));
+        } else {
+            timeDiff.append("00");
+        }
+        timeDiff.append(":");
+
+        if (hutoolTimeDiff.contains(Level.SECOND.getName())) {
+            // 截取秒
+            String second = hutoolTimeDiff.substring(0, hutoolTimeDiff.indexOf(Level.SECOND.getName()));
+            // 格式化添加秒
+            timeDiff.append(String.format("%02d", Long.parseLong(second)));
+        } else {
+            timeDiff.append("00");
+        }
+
+        return timeDiff.toString();
+    }
 
     public List<String> generateTimeDistances() {
         List<String> timeDistances = new ArrayList<>();
@@ -132,6 +208,66 @@ public class ConfigClientApplication3377 {
         firstPageVos.add(FirstPageVo.builder().searchDate("2020-05-11").timeDitance("17:00-17:30").pickUpNumber("4").giveUpNumber("0").groupId("2").build());
         return firstPageVos;
     }
+
+
+
+    public Paging<ChatNewVo> getWebchatChannelList(CharNewPageParam charNewPageParam) {
+        Paging<ChatNew> iPage = charNewMapper.getWebchatChannelList(charNewPageParam);
+        if (CollUtil.isEmpty(iPage.getRecords())) {
+            // 没有记录，返回空页
+            return new Paging<>(iPage.getTotal(), CollUtil.newArrayList(), iPage.getPageIndex(), iPage.getPageSize());
+        }
+
+        // 将原记录构造成vo记录
+        List<ChatNewVo> chatNewVos = chatNews2ChatNewVos(iPage.getRecords());
+
+        // 最后一页，需要计算总和
+        if (iPage.getTotal() / iPage.getPageSize() + (iPage.getTotal() % iPage.getPageSize() != 0 ? 1 : 0) == iPage.getPageIndex()) {
+            // 获取总和，并且将记录插入列表
+            // chatNewVos.add(getChatNewSum(charNewPageParam));
+
+        }
+
+        // 返回CharNewVo的页面
+        return new Paging<>(iPage.getTotal(), chatNewVos, iPage.getPageIndex(), iPage.getPageSize());
+    }
+
+    private ChatNew getWebchatChannelTotal(CharNewPageParam charNewPageParam) {
+        return new ChatNew();
+    }
+
+    private List<ChatNewVo> chatNews2ChatNewVos(List<ChatNew> chatNews) {
+        return chatNews.stream().map(v -> {
+                            ChatNewVo chatNewVo = new ChatNewVo();
+                            // 将对象v中的属性值，copy到charNewVo对象的属性中
+                            BeanUtil.copyProperties(v, chatNewVo);
+                            return chatNewVo;
+                        })
+                        .peek(v -> {
+                            // 使用已有的值，求和
+                            v.setSum(Optional.ofNullable(v.getA()).orElse(BigDecimal.ZERO)
+                                    .add(BigDecimal.valueOf(Optional.ofNullable(v.getB()).orElse(0)))
+                                    .add(BigDecimal.valueOf(Optional.ofNullable(v.getC()).orElse(0))));
+                        })
+                        .collect(Collectors.toList());
+    }
+
+    private ChatNewVo getChatNewSum(CharNewPageParam charNewPageParam) {
+        List<ChatNew> chatNews = chatNewService.getWebchatChannelList(charNewPageParam);
+        if (CollUtil.isEmpty(chatNews)) {
+            return null;
+        }
+        // 将原记录构造成vo记录
+        List<ChatNewVo> chatNewVos = chatNews2ChatNewVos(chatNews);
+        // 定义一个vo记录每个字段求和后的值
+        ChatNewVo chatNewVo = new ChatNewVo();
+        // 如果数据类型是BigDecimal，就这么求和
+        chatNewVo.setA(chatNewVos.stream().map(v -> Optional.ofNullable(v.getA()).orElse(BigDecimal.ZERO)).reduce(BigDecimal.ZERO, BigDecimal::add));
+        // 如果是整型，就这么求和
+        chatNewVo.setB(chatNewVos.stream().mapToInt(v -> Optional.ofNullable(v.getB()).orElse(0)).sum());
+        // 返回总和对象
+        return chatNewVo;
+    }
 }
 
 @Data
@@ -152,6 +288,70 @@ class FirstPageChartVo {
     List<String> rates;
 }
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class ChatNew {
+    BigDecimal a;
+    Integer b;
+    Integer c;
+}
 
+@Data
+class ChatNewVo {
+    BigDecimal a;
+    Integer b;
+    Integer c;
+    BigDecimal sum;
+}
 
+class CharNewPageParam {}
+
+class CharNewMapper {
+    Paging<ChatNew> getWebchatChannelList(CharNewPageParam charNewPageParam) {
+        List<ChatNew> chatNews = CollUtil.newArrayList();
+        for (int i = 0; i < 4; i++) {
+            chatNews.add(new ChatNew(BigDecimal.valueOf(i), i + 1, i + 2));
+        }
+        chatNews.add(new ChatNew(null, null, null));
+        Paging<ChatNew> page = new Paging();
+        page.setRecords(chatNews);
+        return page;
+    }
+}
+
+class ChatNewService {
+    List<ChatNew> getWebchatChannelList(CharNewPageParam charNewPageParam) {
+        List<ChatNew> chatNews = CollUtil.newArrayList();
+        for (int i = 0; i < 4; i++) {
+            chatNews.add(new ChatNew(BigDecimal.valueOf(i), i + 1, i + 2));
+        }
+        chatNews.add(new ChatNew(null, null, null));
+        return chatNews;
+    }
+}
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+class Paging<T> {
+    private long total;
+    private List<T> records;
+    private long pageIndex;
+    private long pageSize;
+}
+
+@Data
+class IPage<T> {
+    private long total;
+    private List<T> records;
+    private long current;
+    private long size;
+}
+
+@Data
+class LoginMessage {
+    String typename;
+    String accounttime;
+}
 

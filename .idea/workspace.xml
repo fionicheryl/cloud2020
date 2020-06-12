@@ -2,24 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ac1fb3-3c8a-470b-9c86-50988ff43844" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/PaymentApplication9003.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/dao/PaymentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/service/impl/PaymentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/PaymentApplication9004.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/dao/PaymentDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/service/PaymentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/service/impl/PaymentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/java/com/fion/springcloud/sentinel/controller/RateLimitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/java/com/fion/springcloud/sentinel/handler/CustomBlockExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/java/com/fion/springcloud/sentinel/controller/FlowLimitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/java/com/fion/springcloud/sentinel/controller/FlowLimitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/target/classes/com/fion/springcloud/sentinel/controller/FlowLimitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/target/classes/com/fion/springcloud/sentinel/controller/FlowLimitController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/OrderApplication84.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/config/BeanConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/config/ConstantConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/controller/OrderFeignController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/sentinel/DefaultBlockHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/sentinel/DefaultFallbackHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/service/PaymentFallbackService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/service/PaymentFeignAllService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/ConfigClientApplication3377.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/ConfigClientApplication3377.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageChartVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageChartVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo$FirstPageVoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo$FirstPageVoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +53,7 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="$MAVEN_REPOSITORY$" />
         <option name="mavenHome" value="$USER_HOME$/Program/maven/apache-maven-3.6.2" />
-        <option name="userSettingsFile" value="$USER_HOME$/Program/maven/apache-maven-3.6.2/conf/ali-settings.xml" />
+        <option name="userSettingsFile" value="$USER_HOME$/Program/maven/apache-maven-3.6.2/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -108,7 +113,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PaymentApplication9004">
+  <component name="RunManager" selected="Application.ConfigClientApplication3377">
     <configuration name="ConfigClientApplication3377" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fion.springcloud.nacos.ConfigClientApplication3377" />
       <module name="cloudalibaba-config-nacos-client3377" />
@@ -122,15 +127,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigClientApplication3377" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="cloudalibaba-config-nacos-client3377" />
+    <configuration name="OrderApplication84" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloudalibaba-consumer-order84" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fion.springcloud.nacos.*" />
+          <option name="PATTERN" value="com.fion.springcloud.sentinel.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fion.springcloud.nacos.ConfigClientApplication3377" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.fion.springcloud.sentinel.OrderApplication84" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -176,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ConfigClientApplication3377" />
+        <item itemvalue="Spring Boot.SentinelApplication8401" />
+        <item itemvalue="Spring Boot.OrderApplication84" />
         <item itemvalue="Spring Boot.PaymentApplication9004" />
         <item itemvalue="Spring Boot.PaymentApplication9003" />
-        <item itemvalue="Spring Boot.SentinelApplication8401" />
-        <item itemvalue="Application.ConfigClientApplication3377" />
-        <item itemvalue="Spring Boot.ConfigClientApplication3377" />
       </list>
     </recent_temporary>
   </component>
@@ -189,22 +194,7 @@
       <serviceView>
         <option name="contentProportion" value="0.20340846" />
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4fda355e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4fda355e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bb07c5f4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4fda355e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a897969f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -247,7 +237,14 @@
       <workItem from="1590715496027" duration="14905000" />
       <workItem from="1590993258262" duration="6572000" />
       <workItem from="1591061172649" duration="14575000" />
-      <workItem from="1591164790058" duration="2217000" />
+      <workItem from="1591164790058" duration="12374000" />
+      <workItem from="1591234324376" duration="3247000" />
+      <workItem from="1591320307690" duration="1302000" />
+      <workItem from="1591412273820" duration="17929000" />
+      <workItem from="1591665707563" duration="599000" />
+      <workItem from="1591752819971" duration="1821000" />
+      <workItem from="1591853976483" duration="17432000" />
+      <workItem from="1591925758379" duration="11920000" />
     </task>
     <servers />
   </component>

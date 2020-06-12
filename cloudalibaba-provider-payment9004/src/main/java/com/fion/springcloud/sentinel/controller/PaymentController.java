@@ -17,7 +17,7 @@ import java.util.List;
 @Slf4j
 public class PaymentController {
 
-    @Value("server.port")
+    @Value("${server.port}")
     private String serverPort;
 
     @Autowired
@@ -28,7 +28,7 @@ public class PaymentController {
         int result = paymentService.save(payment);
         log.info("[save result] result = {}, serverPort = {}", result, serverPort);
         if (result > 0) {
-            return Result.wrapSuccess();
+            return Result.wrapSuccess(result, "服务端口号：" + serverPort);
         } else {
             return Result.wrapError(444, "插入失败");
         }
@@ -36,6 +36,9 @@ public class PaymentController {
 
     @GetMapping(value = "/{id}")
     public Result find(@PathVariable("id") Long id) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Param Error");
+        }
         Payment payment = paymentService.getById(id);
         log.info("[find result] payment = {}, serverPort = {}", JSON.toJSONString(payment), serverPort);
         if (null != payment) {

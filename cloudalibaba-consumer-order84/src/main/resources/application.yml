@@ -1,0 +1,29 @@
+server:
+  port: 84
+
+spring:
+  application:
+    name: nacos-order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+service:
+  url:
+    payment: http://nacos-payment-service
+
+# 激活sentinel对feign的支持
+feign:
+  sentinel:
+    enabled: true

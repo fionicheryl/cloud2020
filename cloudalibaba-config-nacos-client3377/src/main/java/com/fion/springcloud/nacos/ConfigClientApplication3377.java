@@ -29,6 +29,12 @@ public class ConfigClientApplication3377 {
 
     private ChatNewService chatNewService = new ChatNewService();
 
+    public final static List<String> statusArray = new ArrayList<String>(){{
+        add("aaa");
+        add("aaa");
+        add("aaa");
+    }};
+
     /*public static void main(String[] args) {
         SpringApplication.run(ConfigClientApplication3377.class, args);
     }*/

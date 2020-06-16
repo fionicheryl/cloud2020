@@ -2,30 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40ac1fb3-3c8a-470b-9c86-50988ff43844" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/OrderApplication84.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/config/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/config/ConstantConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/controller/OrderFeignController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/sentinel/DefaultBlockHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/sentinel/DefaultFallbackHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/service/PaymentFallbackService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/java/com/fion/springcloud/sentinel/service/PaymentFeignAllService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cloudalibaba-consumer-order84/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/src/main/java/com/fion/springcloud/nacos/ConfigClientApplication3377.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/ConfigClientApplication3377.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/ConfigClientApplication3377.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageChartVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageChartVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo$FirstPageVoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo$FirstPageVoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-config-nacos-client3377/target/classes/com/fion/springcloud/nacos/FirstPageVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9003/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/src/main/java/com/fion/springcloud/sentinel/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-provider-payment9004/target/classes/com/fion/springcloud/sentinel/controller/PaymentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloudalibaba-sentinel-service8401/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +221,9 @@
       <workItem from="1591665707563" duration="599000" />
       <workItem from="1591752819971" duration="1821000" />
       <workItem from="1591853976483" duration="17432000" />
-      <workItem from="1591925758379" duration="11920000" />
+      <workItem from="1591925758379" duration="13409000" />
+      <workItem from="1592109415602" duration="7139000" />
+      <workItem from="1592270760635" duration="2020000" />
     </task>
     <servers />
   </component>
